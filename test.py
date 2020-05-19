@@ -14,7 +14,7 @@ def move_and_click(area):
 # pag.moveRel(-400,-750,duration=0.25)
 
 time.sleep(5)
-print(pag.locateOnScreen('.\\使用的图片\\文章阅读完毕标识.png'))
+print(pag.locateOnScreen('.\\使用的图片\\学习强国APP.png'))
 # pag.click()
 # pag.scroll(-100)
 

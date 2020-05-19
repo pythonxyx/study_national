@@ -8,7 +8,7 @@ import random
 #定义主执行程序
 def main():
     # openApp()
-    diantai = '.\\使用的图片\\学习强国电台.png'
+    # diantai = '.\\使用的图片\\学习强国电台.png'
     # login = '.\\使用的图片\\学习强国登陆.png'
     # flag = 1
     # while flag == 1:
@@ -70,25 +70,18 @@ def main():
     # time.sleep(1)
     # pag.click()
     # time.sleep(3)
-    xianshi = '.\\使用的图片\\推荐文章显示标识.png'
-    while not pag.locateOnScreen(xianshi):
-        print('正在等待文章显示…')
-    shoucang = '.\\使用的图片\\文章收藏标识.png'
-    while not pag.locateOnScreen(shoucang):
-        print('正在查找收藏按钮…')
-    move_and_click(shoucang)
+    # xianshi = '.\\使用的图片\\推荐文章显示标识.png'
+    # while not pag.locateOnScreen(xianshi):
+    #     print('正在等待文章显示…')
+    # shoucang = '.\\使用的图片\\文章收藏标识.png'
+    # while not pag.locateOnScreen(shoucang):
+    #     print('正在查找收藏按钮…')
+    # move_and_click(shoucang)
     time.sleep(3)
     pag.moveRel(-412,-2,duration=0.45)
     pag.click()
     time.sleep(3)
     pag.click()
-    pag.moveRel(0,-10,duration=0.45)
-    time.sleep(3)
-    pag.hotkey('ctrl','A')
-    time.sleep(3)
-    pag.typewrite(' ')
-    time.sleep(3)
-    pag.press('backspace')
     tmplist=['习近平新时代中国特色社会主义思想必将取得伟大的胜利',
              '沿着正确的道路，中华民族必将迎来伟大的复兴',
              '新时代，新思想，中国特色社会主义五位一体建设必将引领中华民'
@@ -100,7 +93,7 @@ def main():
     pyperclip.copy(pinglun)
     pag.hotkey('ctrl','V')
     pag.moveRel(453,-47,duration=0.45)
-    # pag.click()
+    pag.click()
     pag.moveRel(54,58,duration=0.45)
     pag.click()
 
