@@ -13,8 +13,16 @@ def move_and_click(area):
 # time.sleep(5)
 # pag.moveRel(-400,-750,duration=0.25)
 
-time.sleep(5)
-print(pag.locateOnScreen('.\\使用的图片\\学习强国APP.png'))
+# time.sleep(5)
+print(pag.locateOnScreen('.\\使用的图片\\贵州频道文章显示完毕.png'))
+n=pag.locateOnScreen('.\\使用的图片\\贵州频道文章显示完毕.png')
+if n:
+    print('真')
+elif not n:
+    print('假')
+else:
+    print('None')
+
 # pag.click()
 # pag.scroll(-100)
 

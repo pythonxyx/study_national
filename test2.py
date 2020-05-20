@@ -1,11 +1,6 @@
-import pyautogui as pag
-import time
+import win32api
+import os
 
-tm = 0
-while not pag.locateOnScreen('.\\使用的图片\\蓝叠APP.png'):
-    tm += 1
-    time.sleep(2)
-    print('第%d次寻找蓝叠启动图标…'%tm)
-else:
-    x, y = pag.center(pag.locateOnScreen('.\\使用的图片\\蓝叠APP.png'))
-    pag.moveTo(x,y,duration=1)
+# win32api.ShellExecute(0,'open','F:\\Program Files (x86)\\BluestacksCN\\BlueStacksGP.exe','','',1)
+os.chdir('F:\\Program Files (x86)\\BluestacksCN')
+os.system('BlueStacksGP.exe -p cn.xuexi.android')

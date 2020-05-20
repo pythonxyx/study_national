@@ -2,8 +2,7 @@ import pyautogui as pag
 import time
 import win32api,win32gui
 import win32con
-import pyperclip
-import random
+
 
 #定义主执行程序
 def main():
@@ -13,11 +12,9 @@ def main():
     # flag = 1
     # while flag == 1:
     #     if pag.locateOnScreen(login):
-    #         # print('执行登陆')
     #         denglu()
     #         continue
     #     elif pag.locateOnScreen(diantai):
-    #         # print('执行点击电台')
     #         move_and_click(diantai)
     #         flag = 0
     #     else:
@@ -66,6 +63,37 @@ def main():
     #     print('正在查找学习新闻界面…')
     # move_and_click(news)
     # time.sleep(2)
+    # guizhou = '.\\使用的图片\\贵州频道.png'
+    # while not pag.locateOnScreen(guizhou):
+    #     print('正在等待界面显示…')
+    # move_and_click(guizhou)
+    # guizhoupt = '.\\使用的图片\\贵州学习平台.png'
+    # while not pag.locateOnScreen(guizhoupt):
+    #     print('正在等待界面显示…')
+    # move_and_click(guizhoupt)
+    # time.sleep(2)
+    # pag.moveRel(480,700,duration=1)
+    # time.sleep(2)
+    # pag.click()
+    # time.sleep(2)
+    # pag.moveRel(-382,-602,duration=0.45)
+    # pag.click()
+    while pag.locateAllOnScreen('.\\使用的图片\\贵州频道文章显示完毕.png'):
+        print('正在等待界面显示…')
+        if not pag.locateAllOnScreen('.\\使用的图片\\贵州频道文章显示完毕.png'):
+            pag.moveRel(384, 594, duration=0.45)
+            time.sleep(2)
+            # pag.click()
+            break
+        else:
+            pass
+
+
+
+
+
+
+
     # pag.moveRel(0,-165,duration=2)
     # time.sleep(1)
     # pag.click()
@@ -77,82 +105,27 @@ def main():
     # while not pag.locateOnScreen(shoucang):
     #     print('正在查找收藏按钮…')
     # move_and_click(shoucang)
-    time.sleep(3)
-    pag.moveRel(-412,-2,duration=0.45)
-    pag.click()
-    time.sleep(3)
-    pag.click()
-    tmplist=['习近平新时代中国特色社会主义思想必将取得伟大的胜利',
-             '沿着正确的道路，中华民族必将迎来伟大的复兴',
-             '新时代，新思想，中国特色社会主义五位一体建设必将引领中华民'
-             '族的复兴',
-             '新时代，新思想，中国特色社会主义的道路必将引领人类的发展潮流']
-    i = random.randint(0,len(tmplist)-1)
-    j = '！'*random.randint(1,4)
-    pinglun = tmplist[i]+j
-    pyperclip.copy(pinglun)
-    pag.hotkey('ctrl','V')
-    pag.moveRel(453,-47,duration=0.45)
-    pag.click()
-    pag.moveRel(54,58,duration=0.45)
-    pag.click()
-
-
-
-
-    # pag.moveRel(-433,-865,duration=0.25)
+    # time.sleep(3)
+    # pag.moveRel(-412,-2,duration=0.45)
     # pag.click()
     # time.sleep(3)
-    # while not pag.locateOnScreen(diantai):
-    #     print('正在等待界面显示…')
-    # pag.moveRel(175,436,duration=0.45)
-    # time.sleep(3)
+    # pag.click()
+    # tmplist=['习近平新时代中国特色社会主义思想必将取得伟大的胜利',
+    #          '沿着正确的道路，中华民族必将迎来伟大的复兴',
+    #          '新时代，新思想，中国特色社会主义五位一体建设必将引领中华民'
+    #          '族的复兴',
+    #          '新时代，新思想，中国特色社会主义的道路必将引领人类的发展潮流']
+    # i = random.randint(0,len(tmplist)-1)
+    # j = '！'*random.randint(1,4)
+    # pinglun = tmplist[i]+j
+    # pyperclip.copy(pinglun)
+    # pag.hotkey('ctrl','V')
+    # pag.moveRel(453,-47,duration=0.45)
+    # pag.click()
+    # pag.moveRel(54,58,duration=0.45)
     # pag.click()
 
 
-    # move_and_click('.\\使用的图片\\学习强国返回按钮.png')
-    # while not pag.locateOnScreen('.\\使用的图片\\每日金句识别.png'):
-    #     time.sleep(3)
-    #     continue
-    # moveto('.\\使用的图片\\每日金句识别.png')
-    # time.sleep(2)
-    # pag.moveRel(0,-80,duration=0.25)
-    # time.sleep(2)
-    # pag.click()
-    # while not pag.locateOnScreen(shoucang):
-    #     print('正在查找收藏按钮…')
-    # move_and_click(shoucang)
-    # time.sleep(3)
-    # move_and_click('.\\使用的图片\\学习强国返回按钮.png')
-    #
-    #
-    #
-    #
-    #
-    #
-    #
-    #
-    # guizhou = '.\\使用的图片\\贵州频道.png'
-    # flag = 1
-    # while flag == 1:
-    #     try:
-    #         move_and_click(guizhou)
-    #         flag = 0
-    #     except:
-    #         print('正在查找贵州频道界面…')
-    #         continue
-    # guizhoupt = '.\\使用的图片\\贵州学习平台.png'
-    # flag = 1
-    # while flag == 1:
-    #     try:
-    #         move_and_click(guizhoupt)
-    #         flag = 0
-    #     except:
-    #         continue
-    # time.sleep(2)
-    # pag.moveRel(480,700,duration=1)
-    # time.sleep(2)
-    # pag.click()
     # flag = 1
     # while flag == 1:
     #     try:
@@ -208,6 +181,43 @@ def main():
     # pag.click()
     # time.sleep(5)
     # pag.click()
+
+
+
+
+    # pag.moveRel(-433,-865,duration=0.25)
+    # pag.click()
+    # time.sleep(3)
+    # while not pag.locateOnScreen(diantai):
+    #     print('正在等待界面显示…')
+    # pag.moveRel(175,436,duration=0.45)
+    # time.sleep(3)
+    # pag.click()
+
+
+    # move_and_click('.\\使用的图片\\学习强国返回按钮.png')
+    # while not pag.locateOnScreen('.\\使用的图片\\每日金句识别.png'):
+    #     time.sleep(3)
+    #     continue
+    # moveto('.\\使用的图片\\每日金句识别.png')
+    # time.sleep(2)
+    # pag.moveRel(0,-80,duration=0.25)
+    # time.sleep(2)
+    # pag.click()
+    # while not pag.locateOnScreen(shoucang):
+    #     print('正在查找收藏按钮…')
+    # move_and_click(shoucang)
+    # time.sleep(3)
+    # move_and_click('.\\使用的图片\\学习强国返回按钮.png')
+    #
+    #
+    #
+    #
+    #
+    #
+    #
+    #
+
 
 
 #定义一个函数，实现鼠标移动并点击
