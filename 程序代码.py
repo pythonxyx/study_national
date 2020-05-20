@@ -2,6 +2,7 @@ import pyautogui as pag
 import time
 import win32api,win32gui
 import win32con
+import os
 
 
 #定义主执行程序
@@ -79,15 +80,17 @@ def main():
     # pag.moveRel(-382,-602,duration=0.45)
     # pag.click()
     while True:
-        print('正在等待界面显示…')
-        n=pag.locateAllOnScreen('.\\使用的图片\\贵州频道文章显示完毕.png')
-        if  n:
+        if pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\x.png'):
+            print('文章已显示…')
             pag.moveRel(384, 594, duration=0.45)
             time.sleep(2)
             # pag.click()
             break
         else:
-            pass
+            print('正在等待界面显示…')
+            time.sleep(2)
+            os.system('cls')
+            continue
 
 
 
