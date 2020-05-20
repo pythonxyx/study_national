@@ -78,9 +78,10 @@ def main():
     # time.sleep(2)
     # pag.moveRel(-382,-602,duration=0.45)
     # pag.click()
-    while pag.locateAllOnScreen('.\\使用的图片\\贵州频道文章显示完毕.png'):
+    while True:
         print('正在等待界面显示…')
-        if not pag.locateAllOnScreen('.\\使用的图片\\贵州频道文章显示完毕.png'):
+        n=pag.locateAllOnScreen('.\\使用的图片\\贵州频道文章显示完毕.png')
+        if  pag.locateAllOnScreen('.\\使用的图片\\贵州频道文章显示完毕.png'):
             pag.moveRel(384, 594, duration=0.45)
             time.sleep(2)
             # pag.click()
