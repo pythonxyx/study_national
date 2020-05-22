@@ -7,184 +7,143 @@ import os
 
 #定义主执行程序
 def main():
-    # openApp()
-    # diantai = '.\\使用的图片\\学习强国电台.png'
-    # login = '.\\使用的图片\\学习强国登陆.png'
-    # flag = 1
-    # while flag == 1:
-    #     if pag.locateOnScreen(login):
-    #         denglu()
-    #         continue
-    #     elif pag.locateOnScreen(diantai):
-    #         move_and_click(diantai)
-    #         flag = 0
-    #     else:
-    #         print('正在识别是否需要登录…')
-    #         continue
-    # tingwenhua = '.\\使用的图片\\学习强国听文化.png'
-    # flag = 1
-    # while flag == 1:
-    #     try:
-    #         move_and_click(tingwenhua)
-    #         flag = 0
-    #     except:
-    #         continue
-    # tingyinyue = '.\\使用的图片\\听音乐.png'
-    # tingyinyue2 = '.\\使用的图片\\听音乐2.png'
-    # flag = 1
-    # while flag == 1:
-    #     if pag.locateOnScreen(tingyinyue):
-    #         move_and_click(tingyinyue)
-    #         flag = 0
-    #     elif pag.locateOnScreen(tingyinyue2):
-    #         move_and_click(tingyinyue2)
-    #         flag = 0
-    #     else:
-    #         print('正在查找听音乐……')
-    #         continue
-    # time.sleep(2)
-    # pag.moveRel(0, 750, duration=0.25)
-    # pag.click()
-    # time.sleep(2)
-    # bofangquanbu = '.\\使用的图片\\全部播放.png'
-    # flag = 1
-    # while flag == 1:
-    #     try:
-    #         move_and_click(bofangquanbu)
-    #         flag = 0
-    #     except:
-    #         continue
-    # time.sleep(10)
-    # pag.moveRel(69,660,duration=0.5)
-    # pag.click()
-    # time.sleep(10)
-    # pag.click()
-    # news =  '.\\使用的图片\\学习强国新闻.png'
-    # while not pag.locateOnScreen(news):
-    #     print('正在查找学习新闻界面…')
-    # move_and_click(news)
-    # time.sleep(2)
-    # guizhou = '.\\使用的图片\\贵州频道.png'
-    # while not pag.locateOnScreen(guizhou):
-    #     print('正在等待界面显示…')
-    # move_and_click(guizhou)
-    # guizhoupt = '.\\使用的图片\\贵州学习平台.png'
-    # while not pag.locateOnScreen(guizhoupt):
-    #     print('正在等待界面显示…')
-    # move_and_click(guizhoupt)
-    # time.sleep(2)
-    # pag.moveRel(480,700,duration=1)
-    # time.sleep(2)
-    # pag.click()
-    # time.sleep(2)
-    # pag.moveRel(-382,-602,duration=0.45)
-    # pag.click()
+    openApp()
     while True:
-        if pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\x.png'):
-            print('文章已显示…')
-            pag.moveRel(384, 594, duration=0.45)
-            time.sleep(2)
-            # pag.click()
+        if pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\使用的图片\\学习强国登陆.png'):
+            denglu()
+            continue
+        elif pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\使用的图片\\学习强国电台.png'):
+            move_and_click('C:\\Users\\Administrator\\Desktop\\使用的图片\\学习强国电台.png')
             break
         else:
-            print('正在等待界面显示…')
-            time.sleep(2)
-            os.system('cls')
+            print('正在识别是否需要登录…')
             continue
+    while True:
+        try:
+            move_and_click('C:\\Users\\Administrator\\Desktop\\使用的图片\\学习强国听文化.png')
+            break
+        except:
+            continue
+    while True:
+        if pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\使用的图片\\听音乐.png'):
+            move_and_click('C:\\Users\\Administrator\\Desktop\\使用的图片\\听音乐.png')
+            break
+        elif pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\使用的图片\\听音乐2.png'):
+            move_and_click('C:\\Users\\Administrator\\Desktop\\使用的图片\\听音乐2.png')
+            break
+        else:
+            print('正在查找听音乐……')
+            continue
+    time.sleep(2)
+    pag.moveRel(0, 750, duration=0.25)
+    pag.click()
+    time.sleep(2)
+    while True:
+        try:
+            move_and_click('C:\\Users\\Administrator\\Desktop\\使用的图片\\全部播放.png')
+            break
+        except:
+            print('正在等待界面显示…')
+            continue
+    time.sleep(10)
+    pag.moveRel(69,660,duration=0.5)
+    pag.click()
+    time.sleep(10)
+    pag.click()
+    n = 0
+    while not pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\使用的图片\\学习强国新闻.png'):
+        print('正在查找学习新闻界面…')
+        n += 1
+        if n > 10:
+            pag.click()
+            break
+        else:
+            continue
+    move_and_click('C:\\Users\\Administrator\\Desktop\\使用的图片\\学习强国新闻.png')
+    time.sleep(2)
+    guizhou = 'C:\\Users\\Administrator\\Desktop\\使用的图片\\贵州频道.png'
+    while not pag.locateOnScreen(guizhou):
+        print('正在等待界面显示…')
+    move_and_click(guizhou)
+    guizhoupt = 'C:\\Users\\Administrator\\Desktop\\使用的图片\\贵州学习平台.png'
+    while not pag.locateOnScreen(guizhoupt):
+        print('正在等待界面显示…')
+    move_and_click(guizhoupt)
+    time.sleep(2)
+    pag.moveRel(480,700,duration=1)
+    time.sleep(2)
+    pag.click()
+    time.sleep(2)
+    pag.moveRel(-382,-602,duration=0.45)
+    pag.click()
+    guizhouread()
+    while not pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\使用的图片\\贵州学习平台.png'):
+        print('正在等待贵州学习平台的界面显示…')
+        continue
+    time.sleep(2)
+    pag.moveRel(14, 374,duration=0.45)
+    time.sleep(2)
+    pag.click()
+    guizhouread()
+    y = 374
+    for i in range(3):
+        y += 150
+        while not pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\使用的图片\\贵州学习平台.png'):
+            print('正在等待贵州频道的界面显示…')
+            continue
+        pag.moveRel(0,y,duration=0.45)
+        pag.click()
+        guizhouread()
+    while not pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\使用的图片\\新闻推荐.png'):
+        print('正在查找新闻推荐图标…')
+    move_and_click('C:\\Users\\Administrator\\Desktop\\使用的图片\\新闻推荐.png')
+    while not pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\使用的图片\\播报.png'):
+        print('正在等待界面显示…')
+    pag.moveRel(32,649,duration=0.45)
+    time.sleep(2)
+    pag.click()
+    while not pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\使用的图片\\贵州频道文章显示完毕.png'):
+        print('正在等待文章显示…')
+    print('文章已经显示完毕！')
+    pag.moveRel(434,175,duration=0.45)
+    time.sleep(2)
+    pag.click()
+    while not pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\使用的图片\\分享到短信.png'):
+        print('正在等待分享界面打开…')
+    print('分享界面已经打开！')
+    move_and_click('C:\\Users\\Administrator\\Desktop\\使用的图片\\分享到短信.png')
+    time.sleep(2)
+    pag.moveRel(300,214,duration=0.45)
+    time.sleep(1)
+    pag.click()
+    while not pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\使用的图片\\分享到短信.png'):
+        print('正在等待分享界面打开…')
+    print('分享界面已经打开！')
+    move_and_click('C:\\Users\\Administrator\\Desktop\\使用的图片\\分享到平台.png')
+    while not pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\使用的图片\\分享返回定位标识.png'):
+        print('正在等待界面打开…')
+    print('界面已经打开！')
+    pag.moveRel(-44,-641,duration=0.45)
+    time.sleep(1)
+    pag.click()
+    time.sleep(3)
+    pag.moveRel(434,866,duration=0.45)
+    time.sleep(1)
+    pag.click()
 
 
 
 
-
-
-
-    # pag.moveRel(0,-165,duration=2)
-    # time.sleep(1)
-    # pag.click()
     # time.sleep(3)
-    # xianshi = '.\\使用的图片\\推荐文章显示标识.png'
-    # while not pag.locateOnScreen(xianshi):
+    # pag.click()
+    # pag.moveRel(134,443,duration=0.45)
+    # time.sleep(3)
+    # pag.click()
+    # while not pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\使用的图片\\贵州频道文章显示完毕.png'):
     #     print('正在等待文章显示…')
-    # shoucang = '.\\使用的图片\\文章收藏标识.png'
-    # while not pag.locateOnScreen(shoucang):
-    #     print('正在查找收藏按钮…')
-    # move_and_click(shoucang)
-    # time.sleep(3)
-    # pag.moveRel(-412,-2,duration=0.45)
-    # pag.click()
-    # time.sleep(3)
-    # pag.click()
-    # tmplist=['习近平新时代中国特色社会主义思想必将取得伟大的胜利',
-    #          '沿着正确的道路，中华民族必将迎来伟大的复兴',
-    #          '新时代，新思想，中国特色社会主义五位一体建设必将引领中华民'
-    #          '族的复兴',
-    #          '新时代，新思想，中国特色社会主义的道路必将引领人类的发展潮流']
-    # i = random.randint(0,len(tmplist)-1)
-    # j = '！'*random.randint(1,4)
-    # pinglun = tmplist[i]+j
-    # pyperclip.copy(pinglun)
-    # pag.hotkey('ctrl','V')
-    # pag.moveRel(453,-47,duration=0.45)
-    # pag.click()
-    # pag.moveRel(54,58,duration=0.45)
-    # pag.click()
+    # print('文章已经显示完毕！')
 
 
-    # flag = 1
-    # while flag == 1:
-    #     try:
-    #         x, y = pag.center(pag.locateOnScreen(guizhoupt))
-    #         pag.moveTo(x,y,duration=0.25)
-    #         flag = 0
-    #     except:
-    #         continue
-    # pag.moveRel(30,100,duration=0.25)
-    # pag.click()
-    # time.sleep(3)
-    # mousescroll()
-    # fenxiang = '.\\使用的图片\\学习强国分享.png'
-    # fen_xiang_duan_xin = '.\\使用的图片\\分享到短信.png'
-    # fen_xiang_ping_tai = '.\\使用的图片\\分享到平台.png'
-    # move_and_click(fenxiang)
-    # time.sleep(5)
-    # while not pag.locateOnScreen(fen_xiang_ping_tai):
-    #     print('正在打开分享界面…')
-    #     pag.click()
-    #     time.sleep(5)
-    # flag = 1
-    # while flag == 1:
-    #     try:
-    #         move_and_click(fen_xiang_duan_xin)
-    #         flag = 0
-    #     except:
-    #         continue
-    # time.sleep(1)
-    # flag = 1
-    # while flag == 1:
-    #     try:
-    #         move_and_click(fenxiang)
-    #         flag = 0
-    #     except:
-    #         continue
-    # flag = 1
-    # while flag == 1:
-    #     try:
-    #         move_and_click(fen_xiang_ping_tai)
-    #         flag = 0
-    #     except:
-    #         continue
-    # fenxiangfanhuidingwei = '.\\使用的图片\\分享返回定位标识.png'
-    # flag = 1
-    # while flag == 1:
-    #     try:
-    #         move_and_click(fenxiangfanhuidingwei)
-    #         flag = 0
-    #     except:
-    #         continue
-    # pag.moveRel(-232,0,duration=0.25)
-    # pag.click()
-    # time.sleep(5)
-    # pag.click()
 
 
 
@@ -242,21 +201,21 @@ def moveto(area):
 
 #定义一个函数用来打开蓝叠APP软件
 def openApp():
-    n='.\\使用的图片\\蓝叠APP.png'
-    n1='.\\使用的图片\\蓝叠app是否启动.png'
+    n='C:\\Users\\Administrator\\Desktop\\使用的图片\\蓝叠APP.png'
+    n1='C:\\Users\\Administrator\\Desktop\\使用的图片\\蓝叠app是否启动.png'
     if pag.locateOnScreen(n):
         while not pag.locateOnScreen(n1):
             move_and_click(n)
             time.sleep(1.5)
             pag.doubleClick()
             time.sleep(5)
-        flag = 1
-        while flag == 1:
+        while True:
             try:
                 openxxqg()
-                flag = 0
+                break
             except:
-                print('正在查找学习强国APP…')
+                i=os.system('cls')
+                print('正在等在界面启动…')
                 time.sleep(5)
                 continue
     else:
@@ -270,12 +229,12 @@ def openApp():
 
 #定义一个函数用来打开学习强国APP
 def openxxqg():
-    n='.\\使用的图片\\学习强国APP.png'
+    n='C:\\Users\\Administrator\\Desktop\\使用的图片\\学习强国APP.png'
     move_and_click(n)
 
 #定义一个函数，操作学习强国的登陆
 def denglu():
-    n= '.\\使用的图片\\学习强国登陆.png'
+    n= 'C:\\Users\\Administrator\\Desktop\\使用的图片\\学习强国登陆.png'
     flag =1
     while flag==1:
         try:
@@ -285,7 +244,7 @@ def denglu():
             pag.press('enter')
             flag=0
         except:
-            print('查找登陆界面中…')
+            print('正在等待界面显示…')
             continue
 
 #定义一个函数，实现鼠标的无限次滚动
@@ -308,6 +267,21 @@ def movetocenter():
     x = (x1 - x0) / 2 + x0
     y = (y1 - y0) / 2 + y0
     pag.moveTo(x, y, duration=1)
+
+# 定义一个函数，用来控制贵州频道的文章阅读
+def guizhouread():
+    while True:
+        if pag.locateOnScreen('C:\\Users\\Administrator\\Desktop\\使用的图片\\贵州频道文章显示完毕.png'):
+            print('文章已显示,正在等待有效阅读时限（按30秒设置的！）…')
+            time.sleep(30)
+            move_and_click('C:\\Users\\Administrator\\Desktop\\使用的图片\\贵州频道文章阅读返回.png')
+            time.sleep(2)
+            pag.click()
+            break
+        else:
+            print('正在等待界面显示…')
+            time.sleep(2)
+            continue
 
 
 # movetocenter()
